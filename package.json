@@ -1,0 +1,7 @@
+{
+  "dependencies": {
+    "client": "tegila/client",
+    "j2m": "tegila/j2m#fcbb8d8b",
+    "querybuilder": "tegila/querybuilder"
+  }
+}
