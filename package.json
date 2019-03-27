@@ -1,7 +1,9 @@
 {
   "dependencies": {
+    "common": "tegila/common",
     "client": "tegila/client",
-    "j2m": "tegila/j2m#fcbb8d8b",
-    "querybuilder": "tegila/querybuilder"
+    "j2m": "tegila/j2m",
+    "querybuilder": "tegila/querybuilder",
+    "socket.io": "^2.2.0"
   }
 }
