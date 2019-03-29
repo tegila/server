@@ -1,4 +1,4 @@
-const Crypt = require("./crypt")();
+const crypt = require('common')();
 const querystring = require('querystring');
 
 module.exports = {

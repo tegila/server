@@ -1,0 +1,13 @@
+version: '3'
+services:
+  mongo:
+    container_name: 'mongo'
+    image: 'mongo'
+  mongoio:
+    image: mongo.io:latest
+    environment:
+      DATABASE_URL: mongo
+      PORT: 3000
+    ports:
+      - 3000:3000
+    build: .

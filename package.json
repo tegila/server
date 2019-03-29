@@ -1,4 +1,13 @@
 {
+  "name": "mongo.io-server",
+  "version": "0.0.1",
+  "description": "Mongo.io Server",
+  "main": "src/index.js",
+  "author": "tegila",
+  "license": "ISC",
+  "scripts": {
+    "app": "node src/index.js"
+  },
   "dependencies": {
     "common": "tegila/common",
     "client": "tegila/client",
