@@ -9,8 +9,8 @@
     "app": "node src/index.js"
   },
   "dependencies": {
-    "common": "tegila/common",
     "client": "tegila/client",
+    "common": "tegila/common",
     "j2m": "tegila/j2m",
     "querybuilder": "tegila/querybuilder",
     "socket.io": "^2.2.0"
