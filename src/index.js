@@ -21,24 +21,24 @@ io.sockets.on("connection", function(socket) {
   });
 
   // stage 1
-  socket.on("hash", (hash) => {
-    console.log(`receiving hash: ${hash}`);
+  socket.on("message_hash", (message_hash) => {
+    console.log(`receiving message_hash: ${message_hash}`);
     const nonce = Math.random();
 
-    const hash_1 = crypt.hash_message({ hash, nonce });
-    console.log(`hash_1: ${hash_1}`);
+    const message_hash_nonce = crypt.hash_message({ message_hash, nonce });
+    console.log(`message_hash_nonce: ${message_hash_nonce}`);
 
-    socket.once(hash_1, (payload) => {
+    socket.once(message_hash_nonce, (payload) => {
       console.log(`receiving data: ${payload}`);
       console.dir(payload);
-      const hash_2 = crypt.hash_message(payload);
-      console.log(`hash_2: ${hash_2}`);
+      const payload_hash = crypt.hash_message(payload);
+      console.log(`payload_hash: ${payload_hash}`);
 
       j2m
       .exec(payload.message)
       .then(ret => {
         // stage 3
-        socket.emit(hash_2, ret);
+        socket.emit(payload_hash, ret);
         console.log(`sending return: ${ret}`);
         // broadcast if it's a save, update or delete
         // io.sockets.in(data.collection).emit("message", data);
@@ -46,7 +46,7 @@ io.sockets.on("connection", function(socket) {
       .catch(console.log);
     });
     // stage 2
-    socket.emit(hash, nonce);
+    socket.emit(message_hash, nonce);
     console.log(`sending nonce: ${nonce}`);
   });
 });
