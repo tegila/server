@@ -1,4 +1,4 @@
-const logger = process.env.DEBUG ? console.log : null;
+const logger = process.env.DEBUG ? console.log : () => null;
 
 const port = process.env.PORT || 3000;
 const io = require("socket.io")(port);
